@@ -1,0 +1,37 @@
+Flip : [FirstHead, FirstTail]
+Flip % 0.55 0.45
+
+FirstHead: [StayAfterHead, SwitchAfterHead]
+
+StayAfterHead : [HeadAfterStayAfterHead, TailAfterStayAfterHead]
+StayAfterHead % 0.591 0.409
+HeadAfterStayAfterHead = -20
+HeadAfterStayAfterHead : [FlipAgain]
+TailAfterStayAfterHead = 20
+TailAfterStayAfterHead : [FlipAgain]
+
+SwitchAfterHead : [HeadAfterSwitchAfterHead, TailAfterSwitchAfterHead]
+SwitchAfterHead % 0.509 0.491
+HeadAfterSwitchAfterHead = 20
+HeadAfterSwitchAfterHead : [FlipAgain]
+TailAfterSwitchAfterHead = -20
+TailAfterSwitchAfterHead : [FlipAgain]
+
+FirstTail: [StayAfterTail, SwitchAfterTail]
+
+StayAfterTail : [HeadAfterStayAfterTail, TailAfterStayAfterTail]
+StayAfterTail % 0.5 0.5
+HeadAfterStayAfterTail = 20
+HeadAfterStayAfterTail : [FlipAgain]
+TailAfterStayAfterTail = -20
+TailAfterStayAfterTail : [FlipAgain]
+
+SwitchAfterTail : [HeadAfterSwitchAfterTail, TailAfterSwitchAfterTail]
+SwitchAfterTail % 0.6 0.4
+HeadAfterSwitchAfterTail = -20
+HeadAfterSwitchAfterTail : [FlipAgain]
+TailAfterSwitchAfterTail = 20
+TailAfterSwitchAfterTail : [FlipAgain]
+
+FlipAgain : [Flip]
+FlipAgain = -2
